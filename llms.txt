@@ -2,9 +2,9 @@
 
 > Public local-development onboarding maintained by redhat-et: a concise human guide, a detailed agent runbook and an execution brief for an operator's coding agent.
 
-Scope: Apple Silicon Mac, owned Colima Linux VM, Docker and k3d/K3s. Source is pinned to affac2bfc1370e590e6da570bcaaad4a207c9f09. The October 1, 2026 platform and hosted-GLM task passed; this portable recipe is source-reviewed, not reproduced on a second machine. Sandbox Driver=none does not qualify OpenShell or production. Models run remotely.
+Scope: Apple Silicon Mac, approved Linux VM/engine and an owned k3d/K3s installation. The historical Colima/Docker platform and hosted-GLM tool task passed October 1, 2026 at affac2bfc1370e590e6da570bcaaad4a207c9f09. New exploration uses current upstream main and records the resolved SHA. An earlier October 7 Colima/Docker CSB run at 8023db20d5a7cfa84dbfe734d43898fc8cc354ce passed platform/database checks, HTTPS sign-in and a GPT-6 Luna nonce/arithmetic response with maximum effort configured; the same Agent/revision appeared in the console. Tools were not exercised. Browser access used an approved exact local certificate exception, without CA import/system trust claims. Sandbox Driver=none does not qualify OpenShell or production. Models run remotely.
 
-Start with setup.md when asked to install. This index provides documentation discovery, not executable installation. Respect the operator's request, local instructions, explicit model/budget and private credential handling.
+Start with setup.md when asked to install. Lima with rootful Podman is the recommended new-VM path selected and tested for this onboarding work, not company-wide runtime policy. The CSB run passed official platform/database/network/native Codex checks, HTTPS sign-in and a GPT-6 Luna nonce/arithmetic response with max configured, using main baseline e5e206c2a9de01601100c06581cc32f73a174456 plus PR #1543 repairs frozen at a6bfbc985943bd79f49def459fdac13f18e06861. Full VM/cluster resume preserved platform/database, exact Agent state/image/Ready Pod and browser access; resume verification sent no new test prompt. Tools were denied and not exercised; effort wire data and billing were not measured. The unmodified baseline failed. Follow the guarded current-main repair procedure below, record its identity, rebuild the CLI and do not claim plain main acceptance. SELinux stayed Enforcing, without DNS overrides or guest sysctl/managed-host relaxation. Inspect existing environments before creating another and preserve the operator's approved runtime choice. Colima/Docker receipts remain historical. This index provides documentation discovery, not executable installation. Respect the operator's request, local instructions, company security policy, explicit model/budget and private credential handling. The direct first-Agent helper does not configure arbitrary AI gateways or reasoning effort.
 
 ## Setup
 
@@ -13,11 +13,13 @@ Start with setup.md when asked to install. This index provides documentation dis
 - [Human quickstart](https://redhat-et.github.io/openclaw-enterprise-onboarding/GETTING_STARTED.md): five concise steps.
 - [Complete agent packet](https://redhat-et.github.io/openclaw-enterprise-onboarding/llms-full.txt): generated brief plus runbook when one fetch is preferable.
 - [Read-only preflight](https://redhat-et.github.io/openclaw-enterprise-onboarding/setup-check.sh): inspect before running; checks prerequisites without installation or credentials.
+- [Temporary Podman source repair](https://redhat-et.github.io/openclaw-enterprise-onboarding/GETTING_STARTED_AGENTS.md#temporary-repair-from-current-main): review PR #1543, check each needed Dockerfile/Go fix against a clean current-main baseline, apply only those product files, record provenance and rebuild the CLI before installation acceptance.
 
 ## Optional
 
 - [Repository instructions](https://redhat-et.github.io/openclaw-enterprise-onboarding/AGENTS.md): contributor workflow and public-content boundaries.
 - [2026 reference research](https://redhat-et.github.io/openclaw-enterprise-onboarding/AGENT_SETUP_REFERENCES.md): 100k-star examples and format distinctions.
-- [Local architecture](https://redhat-et.github.io/openclaw-enterprise-onboarding/assets/architecture.svg): platform boundaries and remote inference.
+- [Recommended architecture](https://redhat-et.github.io/openclaw-enterprise-onboarding/assets/architecture.svg): Lima/rootful-Podman platform boundaries, owned work mount and remote inference; inspect existing approved runtimes first.
 - [Credential flow](https://redhat-et.github.io/openclaw-enterprise-onboarding/assets/credential-flow.svg): model Secret/IAM and separate administrator/transport credentials.
-- [Upstream local profile](https://github.com/openclaw/openclaw-enterprise/blob/affac2bfc1370e590e6da570bcaaad4a207c9f09/docs/guides/deploy/local-kubernetes-development.md): contract at the tested pin.
+- [Gateway configuration](https://redhat-et.github.io/openclaw-enterprise-onboarding/GETTING_STARTED_AGENTS.md#openai-compatible-gateway-configuration-gpt-6-luna-maximum-effort): GPT-6 Luna/maximum-effort native Configuration, protected model Secret and complete linked deployment flow; Lima CSB nonce/arithmetic reply and exact revision/Ready Pod verified; filesystem tools not exercised.
+- [Upstream local profile](https://github.com/openclaw/openclaw-enterprise/blob/main/docs/guides/deploy/local-kubernetes-development.md): current upstream runtime requirements; record the resolved source revision for each run.

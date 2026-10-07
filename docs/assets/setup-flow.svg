@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420" height="1218" viewBox="0 0 420 1218" role="img" aria-labelledby="title description">
   <title id="title">Agent-assisted OpenClaw Enterprise setup flow</title>
-  <desc id="description">Give your coding agent the llms.txt documentation index, which links to setup.md instructions. The agent inspects tools, resources and ports, prepares an owned Colima virtual machine with Docker and the pinned OCE Kubernetes profile, verifies platform readiness and HTTPS login, uses a privately supplied direct OpenAI credential and an explicitly approved model for the first-Agent helper, then verifies a real model response and intended active revision. A documentation URL does not execute a deployment. Filesystem tools require separate acceptance.</desc>
+  <desc id="description">Give your coding agent the llms.txt documentation index, which links to setup.md instructions. The agent inspects tools, resources, existing approved runtimes and ports, uses the recommended owned Lima/rootful-Podman path unless the operator selected another approved runtime, obtains any missing runtime approval, selects current OCE source and records its SHA, and prepares an owned Kubernetes installation inside the selected Linux VM/container engine. It verifies PostgreSQL, platform readiness and HTTPS login, then configures an approved provider and verifies a real model response and intended active revision. The direct OpenAI helper and a separately configured AI gateway are different paths. A documentation URL does not execute a deployment. Filesystem tools require separate acceptance.</desc>
   <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#526777"/></marker></defs>
   <style>
     text{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#162a3b}
@@ -26,22 +26,22 @@
   <text x="210" y="375" class="note" text-anchor="middle">Preserve unrelated contexts and services</text>
   <path class="arrow" d="M 210 384 L 210 429"/>
   <rect x="28" y="433" width="364" height="132" rx="12" fill="#fff6f1" stroke="#cb9b81" stroke-width="1.5"/>
-  <text x="210" y="464" class="heading" text-anchor="middle">3. Install the pinned local platform</text>
-  <text x="210" y="493" class="body" text-anchor="middle">Owned Colima VM + Docker</text>
+  <text x="210" y="464" class="heading" text-anchor="middle">3. Install the current local platform</text>
+  <text x="210" y="493" class="body" text-anchor="middle">Lima Linux VM + rootful Podman</text>
   <text x="210" y="519" class="body" text-anchor="middle">k3d-managed K3s + source-built OCE</text>
-  <text x="210" y="548" class="note" text-anchor="middle">Fresh private state; Sandbox Driver = none</text>
+  <text x="210" y="548" class="note" text-anchor="middle">Record source SHA; Sandbox Driver = none</text>
   <path class="arrow" d="M 210 565 L 210 610"/>
   <rect x="28" y="614" width="364" height="118" rx="12" fill="#eef3fa" stroke="#9ab1c7" stroke-width="1.5"/>
   <text x="210" y="645" class="heading" text-anchor="middle">4. Verify the platform</text>
-  <text x="210" y="675" class="body" text-anchor="middle">Namespace ready + platform Pods ready</text>
+  <text x="210" y="675" class="body" text-anchor="middle">Database + Namespace + Pods ready</text>
   <text x="210" y="702" class="body" text-anchor="middle">Sign in to the printed HTTPS console</text>
   <text x="210" y="724" class="note" text-anchor="middle">Use the generated private administrator file</text>
   <path class="arrow" d="M 210 732 L 210 777"/>
   <rect x="28" y="781" width="364" height="148" rx="12" fill="#f3edf8" stroke="#ad91bd" stroke-width="1.5"/>
   <text x="210" y="812" class="heading" text-anchor="middle">5. Deploy one first Agent</text>
-  <text x="210" y="841" class="body" text-anchor="middle">Explicitly approved direct OpenAI model</text>
+  <text x="210" y="841" class="body" text-anchor="middle">Approved provider, model and budget</text>
   <text x="210" y="868" class="body" text-anchor="middle">Private key file or runtime injection</text>
-  <text x="210" y="895" class="body" text-anchor="middle">Upstream first-agent.mjs helper</text>
+  <text x="210" y="895" class="body" text-anchor="middle">Direct helper or configured gateway</text>
   <text x="210" y="919" class="note" text-anchor="middle">Keep keys out of prompts, commands and Git</text>
   <path class="arrow" d="M 210 929 L 210 974"/>
   <rect x="28" y="978" width="364" height="132" rx="12" fill="#edf7f1" stroke="#86b39a" stroke-width="1.5"/>

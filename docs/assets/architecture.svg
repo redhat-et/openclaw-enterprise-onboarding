@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="520" height="1336" viewBox="0 0 520 1336" role="img" aria-labelledby="title description">
-  <title id="title">OpenClaw Enterprise local development architecture</title>
-  <desc id="description">An Apple Silicon Mac runs a browser and terminal. An owned Colima Linux virtual machine contains Docker, which hosts the k3d-managed K3s cluster. The cluster contains the Envoy Gateway and cert-manager browser entry, the OCE API, worker and PostgreSQL platform, and a tenant Agent Pod running embedded OpenClaw. The Agent calls an approved remote model provider through HTTPS. Sandbox Driver is none, so OpenShell is absent. Dedicated Codex sandbox preflight is a separate startup check, not the starter Agent's execution mode.</desc>
-  <!-- Public source baseline: openclaw/openclaw-enterprise affac2bfc1370e590e6da570bcaaad4a207c9f09; docs/guides/deploy/local-kubernetes-development.md; docs/guides/first-agent.md. -->
+  <title id="title">Recommended Lima/rootful-Podman path: OpenClaw Enterprise local development architecture</title>
+  <desc id="description">An Apple Silicon Mac runs a browser and terminal. This diagram shows the recommended owned Lima Linux virtual machine with rootful Podman path, selected and tested for this onboarding work rather than company-wide runtime policy. Only the OCE work directory is mounted writable. Inspect existing approved environments and preserve the operator's choice. Podman hosts the k3d-managed K3s node containers; the host uses Lima's forwarded Unix socket. Automatic TCP forwarding is limited to OCE loopback ports 3300, 8444 and 6444; other automatic TCP/UDP forwarding is ignored. The recorded repaired-source CSB run passed platform/browser/model and full VM/cluster resume checks. The cluster contains the Envoy Gateway and cert-manager browser entry, the OCE API and worker, PostgreSQL StatefulSet and persistent volume claim, and a tenant Agent Pod running embedded OpenClaw. The Agent calls an approved remote model provider through HTTPS. Sandbox Driver is none, so OpenShell is absent. Dedicated Codex sandbox preflight is a separate startup check, not the starter Agent's execution mode.</desc>
+  <!-- Public source review: openclaw/openclaw-enterprise main baseline e5e206c2a9de01601100c06581cc32f73a174456 plus PR 1543 repairs frozen at a6bfbc985943bd79f49def459fdac13f18e06861; Lima 2.2.1 template:podman-rootful; docs/guides/deploy/local-kubernetes-development.md; docs/guides/first-agent.md. -->
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#526777"/></marker>
   </defs>
@@ -13,6 +13,7 @@
   <rect width="520" height="1336" rx="12" fill="#ffffff"/>
   <rect x="12" y="14" width="496" height="1114" rx="16" fill="#f6f8fa" stroke="#879ba9" stroke-width="2"/>
   <text x="32" y="48" class="heading">Your Apple Silicon Mac</text>
+  <text x="260" y="66" class="small" text-anchor="middle">Lima/rootful Podman · repaired CSB run verified</text>
   <rect x="32" y="76" width="216" height="76" rx="10" fill="#ffffff" stroke="#b5c3cd"/>
   <text x="140" y="106" class="label" text-anchor="middle">Browser</text>
   <text x="140" y="132" class="body" text-anchor="middle">HTTPS console</text>
@@ -20,12 +21,12 @@
   <text x="377" y="106" class="label" text-anchor="middle">Terminal + OCC CLI</text>
   <text x="377" y="132" class="body" text-anchor="middle">Build and launch</text>
   <rect x="32" y="182" width="456" height="900" rx="14" fill="#edf4f8" stroke="#688ca4" stroke-width="2"/>
-  <text x="52" y="212" class="label">Owned Colima Linux VM</text>
+  <text x="52" y="212" class="label">Lima Linux VM · owned work mount</text>
   <rect x="50" y="236" width="420" height="792" rx="12" fill="#f7fbfd" stroke="#90adbf" stroke-width="2"/>
-  <text x="70" y="266" class="label">Docker engine</text>
+  <text x="70" y="266" class="label">Rootful Podman engine</text>
   <rect x="68" y="292" width="384" height="694" rx="12" fill="#ffffff" stroke="#5c839a" stroke-width="2"/>
   <text x="88" y="322" class="label">k3d-managed K3s cluster</text>
-  <text x="88" y="345" class="small">K3s runs inside Docker node containers</text>
+  <text x="88" y="345" class="small">K3s runs inside Podman node containers</text>
   <rect x="88" y="368" width="344" height="88" rx="10" fill="#eef3fa" stroke="#9ab1c7"/>
   <text x="260" y="398" class="label" text-anchor="middle">Envoy Gateway</text>
   <text x="260" y="423" class="body" text-anchor="middle">HTTPS route to the platform</text>
@@ -42,7 +43,7 @@
   <text x="341" y="568" class="label" text-anchor="middle">OCC worker</text>
   <text x="341" y="590" class="small" text-anchor="middle">Deployment jobs</text>
   <rect x="160" y="650" width="200" height="40" rx="8" fill="#ffffff" stroke="#d4af9a"/>
-  <text x="260" y="676" class="label" text-anchor="middle">PostgreSQL</text>
+  <text x="260" y="676" class="label" text-anchor="middle">PostgreSQL + PVC</text>
   <path class="flow" d="M 177 609 L 177 636 L 210 636 L 210 650"/>
   <path class="flow" d="M 341 609 L 341 636 L 310 636 L 310 650"/>
   <path class="flow control" d="M 260 706 L 260 770"/>
@@ -55,6 +56,7 @@
   <text x="91" y="932" class="label">Sandbox Driver = none</text>
   <text x="91" y="958" class="body">OpenShell is not installed</text>
   <text x="68" y="1060" class="small">Dedicated Codex sandbox preflight is separate.</text>
+  <text x="32" y="1106" class="small">Host socket + loopback TCP 3300 / 8444 / 6444 only</text>
   <path class="flow" d="M 432 835 L 478 835 L 478 1165 L 260 1165 L 260 1200"/>
   <rect x="76" y="1138" width="340" height="28" rx="5" fill="#ffffff"/>
   <text x="246" y="1158" class="body" text-anchor="middle">HTTPS model requests</text>
