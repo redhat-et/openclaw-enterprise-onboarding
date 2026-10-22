@@ -17,8 +17,9 @@ Start with setup.md when asked to install. Lima with rootful Podman is the recom
 
 ## Contribution workflow
 
-- [PR workflow guide](https://redhat-et.github.io/openclaw-enterprise-onboarding/#workflow): the PR #1537 case, contributor actions and how to create a Codex review loop.
-- [PR submission skill](https://redhat-et.github.io/openclaw-enterprise-onboarding/skills/pr-submission-loop/SKILL.md): reusable instructions for implementation, submission, feedback, scheduled follow-up and completion.
+- [PR workflow guide](https://redhat-et.github.io/openclaw-enterprise-onboarding/#workflow): the PR #1537 case, reviewable evidence, concrete coordination requests and how to create a Codex review loop.
+- [PR submission skill](https://redhat-et.github.io/openclaw-enterprise-onboarding/skills/pr-submission-loop/SKILL.md): reusable instructions for contribution scope, implementation, proof, review, authorized coordination, scheduled follow-up and completion; keep its linked reference file with the skill.
+- [OpenClaw/OCE review and coordination reference](https://redhat-et.github.io/openclaw-enterprise-onboarding/skills/pr-submission-loop/references/openclaw-review-coordination.md): repository-specific policy boundaries and scoped Discord observations, with source links; no guaranteed fast track.
 
 ## Optional
 

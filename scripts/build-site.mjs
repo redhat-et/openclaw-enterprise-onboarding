@@ -21,6 +21,7 @@ const published = [
   { source: 'scripts/check-setup.sh', file: 'setup-check.sh' },
   { source: 'docs/AGENT_SETUP_REFERENCES.md', file: 'AGENT_SETUP_REFERENCES.md' },
   { source: '.agents/skills/pr-submission-loop/SKILL.md', file: 'skills/pr-submission-loop/SKILL.md', raw: true },
+  { source: '.agents/skills/pr-submission-loop/references/openclaw-review-coordination.md', file: 'skills/pr-submission-loop/references/openclaw-review-coordination.md', raw: true },
   { source: 'docs/assets/architecture.svg', file: 'assets/architecture.svg' },
   { source: 'docs/assets/setup-flow.svg', file: 'assets/setup-flow.svg' },
   { source: 'docs/assets/credential-flow.svg', file: 'assets/credential-flow.svg' },

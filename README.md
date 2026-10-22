@@ -12,7 +12,7 @@ Public onboarding maintained by [redhat-et](https://github.com/redhat-et) for [O
 | --- | --- |
 | [Human guide](docs/GETTING_STARTED.md) | A short path from prerequisites to one working Agent |
 | [Agent runbook](docs/GETTING_STARTED_AGENTS.md) | Exact commands, configuration, acceptance and recovery |
-| [Codex PR workflow](docs/PR_WORKFLOW.md) | A minimal PR #1537 case study, usage prompt and reusable [skill](.agents/skills/pr-submission-loop/SKILL.md) |
+| [Codex PR workflow](docs/PR_WORKFLOW.md) | PR #1537 case study and reusable [skill](.agents/skills/pr-submission-loop/SKILL.md), with sourced [OpenClaw/OCE review and coordination guidance](.agents/skills/pr-submission-loop/references/openclaw-review-coordination.md) |
 | [Upstream local setup](https://github.com/openclaw/openclaw-enterprise/blob/main/docs/guides/quickstart.md) | The source project's current instructions |
 
 ## What was verified

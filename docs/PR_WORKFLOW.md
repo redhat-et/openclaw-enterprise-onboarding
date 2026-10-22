@@ -2,6 +2,33 @@
 
 Turn a real contribution into a repeatable skill: **scope → implement → verify → submit → review loop → maintainer merge → stop**. Codex handles implementation and follow-up; the contributor supplies direction and approvals, and the repository controls merge authority.
 
+## Make the next review easy
+
+Start with the target repository's current policy and PR template. Check for overlapping work, keep one coherent change, and make the problem, expected behavior, proof and remaining gap understandable from the PR body.
+
+| Current gate | Useful next action |
+| --- | --- |
+| The author still owes a change or proof | Read the complete feedback, address the gap, rerun affected checks and update the body with evidence tied to the tested head. |
+| The proposal needs a product, architecture or ownership decision | Ask the responsible human the specific question before expanding implementation. Follow that repository's RFC policy. |
+| A review request is queued | Wait for the queued work; another ping or label change does not make it faster. Reuse checks that remain valid. |
+
+The [OpenClaw/OCE reference](../.agents/skills/pr-submission-loop/references/openclaw-review-coordination.md) distinguishes current repository policy from selected Discord observations. The useful pattern is concrete GitHub context, real boundary proof and a clear remaining decision. The messages do not establish a guaranteed faster merge path. OpenClaw core and OCE have different bot and contribution boundaries; ratings are feedback, and positive automated review is not human approval.
+
+## Coordinate a concrete decision
+
+Keep the PR description as the durable summary. Use the target's designated community channel when a human decision, coordination problem or apparently blocked automation needs attention. A concise request can look like this:
+
+```text
+PR: <URL> · head: <SHA> · current state: <status>
+Changed/tried: <the change or investigation since the last review>
+Evidence: <focused checks or public proof, with remaining limits>
+Question: <the exact decision, coordination need or missing proof>
+```
+
+Prepare the message as a draft unless outreach is already authorized. Consolidate the request and follow up on meaningful changes; avoid repeated pings or claims that a rating guarantees merge. A time-bound initiative may name contacts or invite guests to another server, but its arrangements are not universal contribution prerequisites.
+
+After an update, check the bot's current trigger rules before assuming it will review again. Core documents a once-only automatic review and author-requested re-review after changes, description, proof and relevant CI are current. OCE's documented bot profile permits review/proof requests but rejects repair, autofix, automerge and merge-approval commands. Recheck the linked policy for the target before acting.
+
 ## Two cooperating loops
 
 [![Historical PR 1537 workflow: contributor-controlled Codex loop exchanges updates and findings with repository-side review, followed by formal maintainer approval and merge](assets/pr-workflow/loop-comparison.png)](assets/pr-workflow/loop-comparison.png)
@@ -43,7 +70,7 @@ The original instruction, October 8, 2026:
 
 ## Computer-use screenshots
 
-These historical browser captures show Codex preparing outreach **after the PR merged**, separately from the review loop. Each pictured composer is an **unsent draft**. The full viewport is retained: Slack uses separate blur blocks over private text; Discord and LinkedIn retain their original background blur, with additional identity blocks obscured. Relevant draft content remains readable. No new messages were sent while preparing this guide.
+These historical browser captures show Codex preparing outreach **after the PR merged**, separately from the review loop. Each pictured composer is an **unsent draft**. The full viewport is retained: Slack uses separate blur blocks over private text; Discord and LinkedIn retain their original background blur, with additional identity blocks obscured. Relevant draft content remains readable. These captures document draft preparation and do not establish delivery.
 
 ### Discord — unsent draft
 
@@ -65,7 +92,7 @@ These historical browser captures show Codex preparing outreach **after the PR m
 
 ## Use the skill
 
-Copy the [pr-submission-loop skill](../.agents/skills/pr-submission-loop/SKILL.md) folder into `.agents/skills/` in the target repository. Keep its `SKILL.md` name and frontmatter. Codex discovers repository skills there; see [official skill documentation](https://learn.chatgpt.com/docs/build-skills).
+Copy the [pr-submission-loop skill](../.agents/skills/pr-submission-loop/SKILL.md) folder into `.agents/skills/` in the target repository. Keep its `SKILL.md` name, frontmatter and linked `references/` files together. Codex discovers repository skills there; see [official skill documentation](https://learn.chatgpt.com/docs/build-skills).
 
 Start in the target repository with a concrete request:
 
